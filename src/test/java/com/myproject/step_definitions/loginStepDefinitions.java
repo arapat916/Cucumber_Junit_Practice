@@ -25,7 +25,19 @@ public class loginStepDefinitions {
     public void user_should_see_dashboard_page() {
 
         System.out.println("user sees dashboard page");
-        Driver.getDriver().quit();
+        Driver.closeDriver();
     }
+
+    @When("user logs in with {string} username and {string} password")
+    public void user_logs_in_with_username_and_password(String string, String string2) {
+
+    }
+    @Then("user verifies that {string} message is displayed.")
+    public void user_verifies_that_message_is_displayed(String string) {
+
+    }
+
+
+
 
 }

@@ -12,7 +12,7 @@ public class searchStepDefinitions {
 
     GooglePage googlePage = new GooglePage();
 
-    @Given("User is on the google page")
+    @Given("user is on the google page")
     public void user_is_on_the_google_page() {
 
         Driver.getDriver().get("http://www.google.com");
@@ -30,7 +30,6 @@ public class searchStepDefinitions {
         String ActualTitle = Driver.getDriver().getTitle();
 
         Assert.assertTrue(ActualTitle.contains(ExpectedTitle));
-        Driver.closeDriver();
 
 
     }
