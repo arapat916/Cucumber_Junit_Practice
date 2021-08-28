@@ -1,5 +1,6 @@
 package com.myproject.utilities;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,5 +25,9 @@ public class BrowserUtils {
         Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         wait.until(ExpectedConditions.elementToBeClickable(button)).click();
         Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        }
+
+        public static void clickWithJS(WebElement element){
+            ( (JavascriptExecutor)(Driver.getDriver())).executeScript("arguments[0].click()",element);
         }
 }
