@@ -11,7 +11,7 @@ public class ConfigurationReader {
             properties.load(in);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Failed to load file");
+            System.out.println("Failed to load property file!!!");
         }
     }
 
