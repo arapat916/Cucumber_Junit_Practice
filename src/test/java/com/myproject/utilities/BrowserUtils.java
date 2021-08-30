@@ -28,6 +28,17 @@ public class BrowserUtils {
         }
 
         public static void clickWithJS(WebElement element){
+            Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
             ( (JavascriptExecutor)(Driver.getDriver())).executeScript("arguments[0].click()",element);
+            Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         }
+
+        public static void enterText(WebElement element,String text){
+        wait.until(ExpectedConditions.visibilityOf(element));
+        element.clear();
+        element.sendKeys(text);
+        wait.until(ExpectedConditions.attributeToBe(element,"value",text));
+            System.out.println("Entering text: "+ text);
+        }
+
 }

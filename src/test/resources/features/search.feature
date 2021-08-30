@@ -12,6 +12,15 @@ Feature: google search
     Then User should see "apple" on page
 
 
-  Scenario: google title verification
-    When User input "blueberry" in google search box
-    Then User should see "blueberry" on page
+
+   @s_o
+  Scenario Outline: google searching with data table
+    When User input "<word>" in google search box
+    Then User should see "<result>" on page
+
+    # autoformatting is ctrl+alt+L
+     Examples:
+       | word      | result    |
+       | apple     | apple     |
+       | blueberry | blueberry |
+       | pineapple | pineapple |

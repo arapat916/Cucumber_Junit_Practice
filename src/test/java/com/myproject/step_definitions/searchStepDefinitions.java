@@ -35,4 +35,8 @@ public class searchStepDefinitions {
     }
 
 
+    @Then("User should see the result")
+    public void userShouldSeeTheResult() {
+        System.out.println("seeing result");
+    }
 }
