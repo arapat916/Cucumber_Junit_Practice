@@ -42,6 +42,17 @@ public class Driver {
                     }
                     break;
 
+                case "remote-firefox":
+                    try{
+                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                        desiredCapabilities.setBrowserName("firefox");
+                        URL gridURL = new URL("http://3.87.8.245:4444/wd/hub");
+                        driver = new RemoteWebDriver(gridURL,desiredCapabilities);
+                    } catch (Exception e){
+                        e.printStackTrace();
+                    }
+                    break;
+
                 default:
                     throw new RuntimeException("no such a browser!");
             }
