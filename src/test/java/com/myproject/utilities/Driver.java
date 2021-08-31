@@ -31,6 +31,7 @@ public class Driver {
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                     break;
+
                 case "remote-chrome":
                     try{
                     DesiredCapabilities desiredCapabilities = new DesiredCapabilities();

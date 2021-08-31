@@ -23,4 +23,3 @@ Feature: google search
        | word      | result    |
        | apple     | apple     |
        | blueberry | blueberry |
-       | pineapple | pineapple |
