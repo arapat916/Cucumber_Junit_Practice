@@ -5,6 +5,8 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -35,7 +37,13 @@ public class Hooks {
         }
 
     @After       //will triggered after every test scenario
-    public void tearDown(){
+    public void tearDown(Scenario scenario){
+
+        if (scenario.isFailed()) {
+            byte[] data = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(data, "image/png", scenario.getName());
+        }
+
         Driver.closeDriver();
         System.out.println(":::::::Eng of test execution:::::::");
 
